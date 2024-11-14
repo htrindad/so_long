@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 13:08:20 by htrindad          #+#    #+#             */
-/*   Updated: 2024/11/14 17:00:19 by htrindad         ###   ########.fr       */
+/*   Updated: 2024/11/14 18:36:39 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,11 @@ void	post_null_ptr(t_window *window)
 	write(2, "Error\n", 6);
 	ptf_printf("Returned a null pointer...\n");
 	exit_error(window);
+}
+
+void	not_eng_args(void)
+{
+	write(2, "Error\n", 6);
+	ptf_printf("Too much, or too few arguments...\n");
+	exit(-1);
 }

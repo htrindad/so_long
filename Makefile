@@ -18,7 +18,7 @@ SRC = $(S_DIR)/main.c $(S_DIR)/keypresses.c $(S_DIR)/exit_win.c $(S_DIR)/refresh
 
 OBJ = $(SRC:.c=.o)
 
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra -g
 MLXFLAGS = -L. -lXext -L. -lX11
 
 $(NAME): $(NEO_LIBFT) $(MLX) $(GNL) $(FT_PRINTF) $(OBJ)

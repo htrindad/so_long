@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 18:49:16 by htrindad          #+#    #+#             */
-/*   Updated: 2024/11/13 18:11:10 by htrindad         ###   ########.fr       */
+/*   Updated: 2024/11/14 18:35:58 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,8 @@ int	main(int ac, char **av)
 {
 	static t_window	window;
 
-	(void)ac;
+	if (ac != 2 || !av[1][0])
+		not_eng_args();
 	initialize_all(&window, av[1]);
 	load_imgs(&window);
 	mlx_loop_hook(window.mlx, nothing, &window);

@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 18:49:33 by htrindad          #+#    #+#             */
-/*   Updated: 2024/11/14 17:00:33 by htrindad         ###   ########.fr       */
+/*   Updated: 2024/11/14 18:35:34 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,5 +67,6 @@ void	not_valid(void);
 void	post_null_ptr(t_window *window);
 void	set_pos(t_window *window);
 void	set_cocs(t_window *window);
+void	not_eng_args(void);
 
 #endif
