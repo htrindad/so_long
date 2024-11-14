@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 14:30:38 by htrindad          #+#    #+#             */
-/*   Updated: 2024/11/13 18:16:07 by htrindad         ###   ########.fr       */
+/*   Updated: 2024/11/14 17:02:17 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ static void	al_maps(t_window *window, int fd)
 	int	i;
 
 	i = 0;
-	if (window->h == 50)
-		not_valid(window);
+	if (window->h == 50 || window->w == 50)
+		not_valid();
 	window->map = (char **)malloc(sizeof(char *) * (window->h / 50 + 1));
 	if (!window->map)
 		post_null_ptr(window);
@@ -32,7 +32,7 @@ static void	al_maps(t_window *window, int fd)
 	window->map[i] = NULL;
 }
 
-static int	c_line(t_window *window, char *av)
+static int	c_line(char *av)
 {
 	int		i;
 	int		fd;
@@ -44,8 +44,6 @@ static int	c_line(t_window *window, char *av)
 		fd = open("maps/map0.ber", O_RDONLY);
 	else
 		fd = open(av, O_RDONLY);
-	if (fd < 0)
-		err_opn_file(window);
 	while (read(fd, &c, 1) > 0)
 		if (c == '\n')
 			i++;
@@ -55,7 +53,7 @@ static int	c_line(t_window *window, char *av)
 	return (i);
 }
 
-static int	c_column(t_window *window, char *av)
+static int	c_column(char *av)
 {
 	int		i;
 	int		fd;
@@ -66,8 +64,6 @@ static int	c_column(t_window *window, char *av)
 		fd = open("maps/map0.ber", O_RDONLY);
 	else
 		fd = open(av, O_RDONLY);
-	if (fd < 0)
-		err_opn_file(window);
 	while (read(fd, &c, 1) > 0)
 	{
 		if (!c || c == '\n')
@@ -80,14 +76,22 @@ static int	c_column(t_window *window, char *av)
 
 int	alct_map(t_window *window, char *av)
 {
-	int	fd;
+	int		fd;
 
+	fd = 0;
 	if (av == NULL)
 		fd = open("maps/map0.ber", O_RDONLY);
 	else
-		fd = open(av, O_RDONLY);
-	window->h = c_line(window, av) * 50;
-	window->w = c_column(window, av) * 50;
+	{
+		if (ft_strrstr(av, ".ber") == NULL)
+			not_valid();
+		else
+			fd = open(av, O_RDONLY);
+	}
+	if (fd < 0)
+		err_opn_file();
+	window->h = c_line(av) * 50;
+	window->w = c_column(av) * 50;
 	al_maps(window, fd);
 	close(fd);
 	return (1);

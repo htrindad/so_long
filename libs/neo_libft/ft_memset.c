@@ -1,18 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/06 21:04:32 by htrindad          #+#    #+#             */
-/*   Updated: 2024/11/14 14:32:34 by htrindad         ###   ########.fr       */
+/*   Created: 2024/04/13 18:13:32 by htrindad          #+#    #+#             */
+/*   Updated: 2024/04/13 18:13:34 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-void	ptf_putchar_fd(char c, int fd, int *len)
+void	*ft_memset(void *str, int c, size_t t)
 {
-	*len += write(fd, &c, 1);
+	size_t			i;
+	unsigned char	*ptr;
+
+	ptr = (unsigned char *)str;
+	i = 0;
+	while (i < t)
+		ptr[i++] = (unsigned char)c;
+	return (str);
 }

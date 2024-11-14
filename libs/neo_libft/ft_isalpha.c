@@ -1,18 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/06 21:04:32 by htrindad          #+#    #+#             */
-/*   Updated: 2024/11/14 14:32:34 by htrindad         ###   ########.fr       */
+/*   Created: 2024/04/19 16:07:07 by htrindad          #+#    #+#             */
+/*   Updated: 2024/04/19 16:07:08 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-
-void	ptf_putchar_fd(char c, int fd, int *len)
+int	ft_isalpha(int c)
 {
-	*len += write(fd, &c, 1);
+	return ((c > 64 && c < 91) || (c > 96 && c < 123));
 }

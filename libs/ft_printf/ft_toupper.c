@@ -6,11 +6,11 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 20:23:50 by htrindad          #+#    #+#             */
-/*   Updated: 2024/05/13 20:59:15 by htrindad         ###   ########.fr       */
+/*   Updated: 2024/11/14 14:33:40 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_toupper(char *s)
+void	ptf_toupper(char *s)
 {
 	while (*s)
 	{

@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 12:31:20 by htrindad          #+#    #+#             */
-/*   Updated: 2024/11/09 16:53:34 by htrindad         ###   ########.fr       */
+/*   Updated: 2024/11/14 14:35:54 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	exit_error(t_window *window)
 
 int	exit_win(t_window *window)
 {
-	ft_printf("Be seeing you...\n");
+	ptf_printf("Be seeing you...\n");
 	exit_error(window);
 	return (0);
 }

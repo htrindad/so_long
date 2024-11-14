@@ -1,18 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/06 21:04:32 by htrindad          #+#    #+#             */
-/*   Updated: 2024/11/14 14:32:34 by htrindad         ###   ########.fr       */
+/*   Created: 2024/04/16 14:33:11 by htrindad          #+#    #+#             */
+/*   Updated: 2024/04/16 16:22:32 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-void	ptf_putchar_fd(char c, int fd, int *len)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	*len += write(fd, &c, 1);
+	size_t	i;
+	size_t	j;
+
+	if (!ft_strlen(little))
+		return ((char *)big);
+	i = 0;
+	while (i < len && big[i])
+	{
+		j = 0;
+		if (big[i] == little[j])
+		{
+			while (little[j] == big[i + j] && i + j < len)
+				j++;
+			if (!little[j])
+				return ((char *)&big[i]);
+		}
+		i++;
+	}
+	return (NULL);
 }

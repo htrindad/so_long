@@ -1,18 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/06 21:04:32 by htrindad          #+#    #+#             */
-/*   Updated: 2024/11/14 14:32:34 by htrindad         ###   ########.fr       */
+/*   Created: 2024/04/13 18:12:09 by htrindad          #+#    #+#             */
+/*   Updated: 2024/04/18 19:31:54 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-
-void	ptf_putchar_fd(char c, int fd, int *len)
+int	ft_isascii(int c)
 {
-	*len += write(fd, &c, 1);
+	return (c > -1 && c < 128);
 }

@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/06 21:04:32 by htrindad          #+#    #+#             */
-/*   Updated: 2024/11/14 14:32:34 by htrindad         ###   ########.fr       */
+/*   Created: 2024/04/13 12:22:58 by htrindad          #+#    #+#             */
+/*   Updated: 2024/04/16 08:38:12 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-void	ptf_putchar_fd(char c, int fd, int *len)
+void	ft_bzero(void *s, size_t n)
 {
-	*len += write(fd, &c, 1);
+	ft_memset(s, 0, n);
 }

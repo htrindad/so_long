@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 12:58:29 by htrindad          #+#    #+#             */
-/*   Updated: 2024/11/13 18:07:18 by htrindad         ###   ########.fr       */
+/*   Updated: 2024/11/14 14:36:15 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,17 +51,17 @@ static void	detect_exit(t_window *window)
 void	move(char dir, t_window *window)
 {
 	window->player.moves++;
-	ft_printf("Moved: ");
+	ptf_printf("Moved: ");
 	detect_collision(dir, window);
 	if (dir == 1)
-		ft_printf("Up\n");
+		ptf_printf("Up\n");
 	if (dir == 2)
-		ft_printf("Down\n");
+		ptf_printf("Down\n");
 	if (dir == 3)
-		ft_printf("Left\n");
+		ptf_printf("Left\n");
 	if (dir == 4)
-		ft_printf("Right\n");
+		ptf_printf("Right\n");
 	detect_collectible(window);
 	detect_exit(window);
-	ft_printf("Current moves: %d\n", window->player.moves);
+	ptf_printf("Current moves: %d\n", window->player.moves);
 }

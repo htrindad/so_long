@@ -1,18 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/06 21:04:32 by htrindad          #+#    #+#             */
-/*   Updated: 2024/11/14 14:32:34 by htrindad         ###   ########.fr       */
+/*   Created: 2024/04/13 15:50:33 by htrindad          #+#    #+#             */
+/*   Updated: 2024/04/13 15:50:47 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-void	ptf_putchar_fd(char c, int fd, int *len)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	*len += write(fd, &c, 1);
+	size_t			i;
+	unsigned char	*td;
+	unsigned char	*ts;
+
+	if (!n || dest == src)
+		return (dest);
+	td = dest;
+	ts = (unsigned char *)src;
+	i = 0;
+	while (i < n)
+	{
+		td[i] = ts[i];
+		i++;
+	}
+	return (dest);
 }

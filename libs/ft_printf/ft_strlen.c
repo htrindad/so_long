@@ -6,13 +6,13 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 21:03:23 by htrindad          #+#    #+#             */
-/*   Updated: 2024/05/10 16:34:52 by htrindad         ###   ########.fr       */
+/*   Updated: 2024/11/14 14:33:33 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_strlen(const char *str)
+int	ptf_strlen(const char *str)
 {
 	int	i;
 

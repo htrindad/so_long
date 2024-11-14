@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 19:54:08 by htrindad          #+#    #+#             */
-/*   Updated: 2024/05/18 17:24:14 by htrindad         ###   ########.fr       */
+/*   Updated: 2024/11/14 14:34:24 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,14 @@
 # include <stdlib.h>
 # include <stdbool.h>
 
-int			ft_strlen(const char *str);
-void		ft_putchar_fd(char c, int fd, int *len);
-void		ft_putnbr_fd(int n, int fd, int *len);
-void		ft_putstr_fd(char *s, int fd, int *len);
-int			ft_printf(const char *s, ...);
-void		ft_putptr_fd(unsigned long long ptr, int fd, int *len);
-void		ft_print_ung_fd(unsigned int n, int fd, int *len);
-void		ft_puthexa_fd(unsigned int hex, int fd, int *len, bool cap);
-void		ft_toupper(char *s);
+int			ptf_strlen(const char *str);
+void		ptf_putchar_fd(char c, int fd, int *len);
+void		ptf_putnbr_fd(int n, int fd, int *len);
+void		ptf_putstr_fd(char *s, int fd, int *len);
+int			ptf_printf(const char *s, ...);
+void		ptf_putptr_fd(unsigned long long ptr, int fd, int *len);
+void		ptf_print_ung_fd(unsigned int n, int fd, int *len);
+void		ptf_puthexa_fd(unsigned int hex, int fd, int *len, bool cap);
+void		ptf_toupper(char *s);
 
 #endif

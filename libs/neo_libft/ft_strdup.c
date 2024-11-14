@@ -1,18 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/06 21:04:32 by htrindad          #+#    #+#             */
-/*   Updated: 2024/11/14 14:32:34 by htrindad         ###   ########.fr       */
+/*   Created: 2024/04/13 15:33:21 by htrindad          #+#    #+#             */
+/*   Updated: 2024/04/16 20:13:17 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-void	ptf_putchar_fd(char c, int fd, int *len)
+char	*ft_strdup(const char *s)
 {
-	*len += write(fd, &c, 1);
+	char	*sc;
+
+	sc = ft_calloc(ft_strlen(s) + 1, sizeof(char));
+	if (sc == NULL)
+		return (NULL);
+	ft_memcpy(sc, s, ft_strlen(s));
+	return (sc);
 }

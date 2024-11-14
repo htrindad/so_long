@@ -1,18 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/06 21:04:32 by htrindad          #+#    #+#             */
-/*   Updated: 2024/11/14 14:32:34 by htrindad         ###   ########.fr       */
+/*   Created: 2024/04/23 17:58:01 by htrindad          #+#    #+#             */
+/*   Updated: 2024/04/23 18:22:21 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-void	ptf_putchar_fd(char c, int fd, int *len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	*len += write(fd, &c, 1);
+	char	*ret;
+	size_t	i;
+
+	if (!s || !len || start > ft_strlen(s))
+		return (ft_strdup(""));
+	i = 0;
+	if (len > ft_strlen(s + start))
+		len = ft_strlen(s + start);
+	ret = malloc(sizeof(char) * (len + 1));
+	if (ret == NULL)
+		return (NULL);
+	while (len)
+	{
+		ret[i++] = s[start++];
+		len--;
+	}
+	ret[i] = 0;
+	return (ret);
 }

@@ -6,13 +6,14 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 18:49:33 by htrindad          #+#    #+#             */
-/*   Updated: 2024/11/13 18:11:34 by htrindad         ###   ########.fr       */
+/*   Updated: 2024/11/14 17:00:33 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
+# include "../libs/neo_libft/libft.h"
 # include "../libs/mlx/mlx.h"
 # include "../libs/ft_printf/ft_printf.h"
 # include "../libs/gnl/get_next_line.h"
@@ -60,9 +61,9 @@ int		alct_map(t_window *window, char *av);
 void	move(char dir, t_window *window);
 void	null_ptr(void);
 void	exit_error(t_window *window);
-void	err_opn_file(t_window *window);
+void	err_opn_file(void);
 void	paint_map(t_window *window);
-void	not_valid(t_window *window);
+void	not_valid(void);
 void	post_null_ptr(t_window *window);
 void	set_pos(t_window *window);
 void	set_cocs(t_window *window);
