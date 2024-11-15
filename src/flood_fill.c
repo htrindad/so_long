@@ -6,13 +6,13 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 15:30:24 by htrindad          #+#    #+#             */
-/*   Updated: 2024/11/15 16:48:19 by htrindad         ###   ########.fr       */
+/*   Updated: 2024/11/15 17:02:07 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-static int	g_ff_found = 0;
+static int	g_ff_found;
 
 static int	all_cocs(char **map)
 {
