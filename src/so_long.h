@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 18:49:33 by htrindad          #+#    #+#             */
-/*   Updated: 2024/11/15 16:25:32 by htrindad         ###   ########.fr       */
+/*   Updated: 2024/11/15 17:27:47 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,5 +74,6 @@ void	checkers(t_window *window);
 bool	ff_receiver(char **map);
 char	**free_str(char **map);
 char	**copy_dim(char **map);
+void	map_too_big(void);
 
 #endif

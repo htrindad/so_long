@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 14:30:38 by htrindad          #+#    #+#             */
-/*   Updated: 2024/11/15 16:54:47 by htrindad         ###   ########.fr       */
+/*   Updated: 2024/11/15 17:27:34 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,6 +106,8 @@ int	alct_map(t_window *window, char *av)
 		err_opn_file();
 	window->h = c_line(av) * 50;
 	window->w = c_column(av) * 50;
+	if (window->h > 1080 || window->h > 1920)
+		map_too_big();
 	if (rect_map(window, fd))
 		not_valid();
 	close(fd);
