@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 12:10:12 by htrindad          #+#    #+#             */
-/*   Updated: 2024/11/15 12:52:46 by htrindad         ###   ########.fr       */
+/*   Updated: 2024/11/15 14:41:15 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,15 +54,47 @@ static bool	pce(char **map)
 			p += map[y][x] == 'P';
 			c += map[y][x] == 'C';
 			e += map[y][x] == 'E';
+			x++;
 		}
+		y++;
 	}
-	if (p != 1 || C < 1 || e != 1)
-		return (false);
-	return (true);
+	if (p != 1 || c < 1 || e != 1)
+		return (true);
+	return (false);
+}
+
+static bool	line_one(char *map)
+{
+	size_t	i;
+
+	i = 0;
+	while (map[i])
+	{
+		if (map[i] != '1')
+			return (true);
+		i++;
+	}
+	return (false);
+}
+
+static bool	m_open(char **map)
+{
+	size_t	y;
+
+	y = 0;
+	if (line_one(map[0]))
+		return (true);
+	while (map[y++])
+		if (map[y][0] != '1' || map[y][ft_strlen(map[y]) - 1] != '1')
+			return (true);
+	if (line_one(map[--y]))
+		return (true);
+	return (false);
 }
 
 void	checkers(t_window *window)
 {
-	if (check_map(window->map) || pce(window->map))
+	if (check_map(window->map) || pce(window->map) \
+		|| m_open(window->map))
 		invalid_map(window);
 }
