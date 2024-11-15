@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 18:49:33 by htrindad          #+#    #+#             */
-/*   Updated: 2024/11/15 12:36:19 by htrindad         ###   ########.fr       */
+/*   Updated: 2024/11/15 15:52:05 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,5 +71,6 @@ void	not_eng_args(void);
 void	invalid_map(t_window *window);
 void	free_string(t_window *window);
 void	checkers(t_window *window);
+bool	ff_receiver(char **map);
 
 #endif
