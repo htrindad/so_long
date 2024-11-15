@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 14:30:38 by htrindad          #+#    #+#             */
-/*   Updated: 2024/11/15 12:53:42 by htrindad         ###   ########.fr       */
+/*   Updated: 2024/11/15 16:54:47 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,12 @@ static bool	rect_map(t_window *window, int fd)
 	{
 		cl = get_next_line(fd);
 		if (ft_strlen(cl) - 1 != (size_t)x_init || cl == NULL)
+		{
+			if (cl)
+				free(cl);
 			return (true);
+		}
+		free(cl);
 		y++;
 	}
 	if (y != y_init)

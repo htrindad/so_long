@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 15:30:24 by htrindad          #+#    #+#             */
-/*   Updated: 2024/11/15 15:58:31 by htrindad         ###   ########.fr       */
+/*   Updated: 2024/11/15 16:48:19 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,13 @@ static int	all_cocs(char **map)
 
 	y = 0;
 	cocs = 1;
-	while (map[y++])
+	while (map[y])
 	{
 		x = 0;
 		while (map[y][x])
 			if (map[y][x++] == 'C')
 				cocs++;
+		y++;
 	}
 	return (cocs);
 }
@@ -67,6 +68,7 @@ static size_t	find_px(char **map)
 static void	ff(char **map, size_t y, size_t x)
 {
 	g_ff_found += (map[y][x] == 'E' || map[y][x] == 'C');
+	map[y][x] = '1';
 	if (map[y - 1][x] != '1')
 		ff(map, y - 1, x);
 	if (map[y + 1][x] != '1')
@@ -75,15 +77,22 @@ static void	ff(char **map, size_t y, size_t x)
 		ff(map, y, x - 1);
 	if (map[y][x + 1] != '1')
 		ff(map, y, x + 1);
-	return ;
 }
 
 bool	ff_receiver(char **map)
 {
 	const size_t	py = find_py(map);
 	const size_t	px = find_px(map);
+	char			**cm;
 
-	ff(map, py, px);
+	cm = copy_dim(map);
+	if (cm == NULL)
+	{
+		null_ptr();
+		exit(-1);
+	}
+	ff(cm, py, px);
+	free_str(cm);
 	if (g_ff_found != all_cocs(map))
 		return (true);
 	return (false);

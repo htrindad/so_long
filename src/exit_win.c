@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 12:31:20 by htrindad          #+#    #+#             */
-/*   Updated: 2024/11/15 12:24:59 by htrindad         ###   ########.fr       */
+/*   Updated: 2024/11/15 16:22:26 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,17 @@ void	free_string(t_window *window)
 	while (window->map[i])
 		free(window->map[i++]);
 	free(window->map);
+}
+
+char	**free_str(char **map)
+{
+	int	i;
+
+	i = 0;
+	while (map[i])
+		free(map[i++]);
+	free(map);
+	return (NULL);
 }
 
 static void	destroy_assets(t_window *window)
