@@ -14,7 +14,8 @@ FT_PRINTF = $(FT_PRINTF_DIR)/libftprintf.a
 
 S_DIR = ./src
 SRC = $(S_DIR)/main.c $(S_DIR)/keypresses.c $(S_DIR)/exit_win.c $(S_DIR)/refresh.c $(S_DIR)/move.c \
-      $(S_DIR)/error_handler.c $(S_DIR)/alct_map.c $(S_DIR)/paint_map.c $(S_DIR)/set_cocs.c
+      $(S_DIR)/error_handler.c $(S_DIR)/alct_map.c $(S_DIR)/paint_map.c $(S_DIR)/set_cocs.c \
+      $(S_DIR)/free_error.c $(S_DIR)/check_map.c
 
 OBJ = $(SRC:.c=.o)
 

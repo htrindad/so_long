@@ -6,13 +6,13 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 12:31:20 by htrindad          #+#    #+#             */
-/*   Updated: 2024/11/14 14:35:54 by htrindad         ###   ########.fr       */
+/*   Updated: 2024/11/15 12:24:59 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-static void	free_string(t_window *window)
+void	free_string(t_window *window)
 {
 	int	i;
 

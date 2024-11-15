@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 13:08:20 by htrindad          #+#    #+#             */
-/*   Updated: 2024/11/14 18:36:39 by htrindad         ###   ########.fr       */
+/*   Updated: 2024/11/15 12:14:17 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	null_ptr(void)
 	ptf_printf("Returned a null pointer...\n");
 }
 
-void	err_opn_file()
+void	err_opn_file(void)
 {
 	write(2, "Error\n", 6);
 	ptf_printf("Error opening file...\n");
@@ -32,11 +32,11 @@ void	not_valid(void)
 	exit(-1);
 }
 
-void	post_null_ptr(t_window *window)
+void	post_null_ptr(void)
 {
 	write(2, "Error\n", 6);
 	ptf_printf("Returned a null pointer...\n");
-	exit_error(window);
+	exit(-1);
 }
 
 void	not_eng_args(void)

@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 14:30:38 by htrindad          #+#    #+#             */
-/*   Updated: 2024/11/14 19:02:57 by htrindad         ###   ########.fr       */
+/*   Updated: 2024/11/15 12:53:42 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ static void	al_maps(t_window *window, int fd)
 	if (window->h == 50 || window->w == 50)
 		not_valid();
 	window->map = (char **)malloc(sizeof(char *) * (window->h / 50 + 1));
-	if (!window->map)
-		post_null_ptr(window);
+	if (window->map == NULL)
+		post_null_ptr();
 	while (i <= window->h / 50)
 	{
 		window->map[i] = get_next_line(fd);
@@ -74,8 +74,8 @@ static bool	rect_map(t_window *window, int fd)
 {
 	const int	x_init = window->w / 50;
 	const int	y_init = window->h / 50;
-	char	*cl;
-	int		y;
+	char		*cl;
+	int			y;
 
 	y = 0;
 	while (y < y_init)
@@ -106,5 +106,6 @@ int	alct_map(t_window *window, char *av)
 	close(fd);
 	fd = open(av, O_RDONLY);
 	al_maps(window, fd);
+	checkers(window);
 	return (1);
 }
