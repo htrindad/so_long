@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 15:30:24 by htrindad          #+#    #+#             */
-/*   Updated: 2024/11/18 16:28:36 by htrindad         ###   ########.fr       */
+/*   Updated: 2024/11/18 17:11:08 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,7 @@ static int	all_cocs(char **map)
 	{
 		x = 0;
 		while (map[y][x])
-			if (map[y][x++] == 'C')
-				cocs++;
+			cocs += map[y][x++] == 'C';
 		y++;
 	}
 	return (cocs);
