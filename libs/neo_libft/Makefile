@@ -6,7 +6,7 @@
 #    By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/24 17:08:01 by htrindad          #+#    #+#              #
-#    Updated: 2024/11/18 16:35:33 by htrindad         ###   ########.fr        #
+#    Updated: 2024/11/18 16:48:51 by htrindad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ OBJS = $(SRC:.c=.o)
 
 BONUS_OBJ = $(BONUS:.c=.o)
 
-CFLAGS = -Wall -Wextra -Werror -g
+CFLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
 
