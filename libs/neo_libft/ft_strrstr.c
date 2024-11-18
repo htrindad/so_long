@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 14:54:26 by htrindad          #+#    #+#             */
-/*   Updated: 2024/11/14 17:03:48 by htrindad         ###   ########.fr       */
+/*   Updated: 2024/11/18 16:45:00 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ char	*ft_strrstr(const char *big, const char *little)
 	if (!ft_strlen(little))
 		return ((char *)big);
 	i = ft_strlen(big);
+	if (i < ft_strlen(little))
+		return (NULL);
 	while (i)
 	{
 		j = ft_strlen(little);
